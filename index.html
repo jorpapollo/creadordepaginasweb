@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christopher Web Design</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Christopher Web</div>
+    <nav>
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-texto">
+      <h1>Diseño sitios web profesionales</h1>
+      <p>Transforma tu idea en una página que vende. Rápido. Atractivo. Seguro.</p>
+      <a href="#contacto" class="btn">¡Cotiza tu sitio!</a>
+    </div>
+    <div class="hero-img">
+      <img src="img/hero.svg" alt="Diseño web ilustración">
+    </div>
+  </section>
+
+  <section id="servicios" class="section" data-aos="fade-up">
+    <h2>Servicios</h2>
+    <ul class="servicios">
+      <li><span class="material-icons">storefront</span> Sitio web para negocios locales</li>
+      <li><span class="material-icons">web</span> Landing page para productos</li>
+      <li><span class="material-icons">person</span> Portafolios profesionales</li>
+      <li><span class="material-icons">devices</span> Diseño responsivo</li>
+    </ul>
+  </section>
+
+  <section id="sobre-mi" class="section" data-aos="fade-right">
+    <h2>Sobre mí</h2>
+    <p>Soy Christopher, desarrollador web joven y ambicioso. Mi objetivo es ayudarte a tener una presencia profesional en internet.</p>
+  </section>
+
+  <section id="contacto" class="section" data-aos="fade-left">
+    <h2>Contacto</h2>
+    <form id="formulario-contacto">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu email" required>
+      <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Christopher Web. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    // ✅ Validación del formulario
+    document.getElementById('formulario-contacto').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nombre = this.querySelector('input[type="text"]').value.trim();
+      const email = this.querySelector('input[type="email"]').value.trim();
+      const mensaje = this.querySelector('textarea').value.trim();
+
+      if (!nombre || !email || !mensaje) {
+        alert('Por favor completa todos los campos.');
+        return;
+      }
+
+      alert('Gracias por contactarme, ' + nombre + '. Te responderé pronto.');
+      this.reset();
+    });
+
+    // ✅ Botón flotante de WhatsApp
+    const botonWhatsapp = document.createElement('a');
+    botonWhatsapp.href = 'https://wa.me/524427102940'; // Reemplaza con tu número real
+    botonWhatsapp.target = '_blank';
+    botonWhatsapp.innerHTML = '💬';
+    botonWhatsapp.style.position = 'fixed';
+    botonWhatsapp.style.bottom = '20px';
+    botonWhatsapp.style.right = '20px';
+    botonWhatsapp.style.backgroundColor = '#25d366';
+    botonWhatsapp.style.color = 'white';
+    botonWhatsapp.style.fontSize = '30px';
+    botonWhatsapp.style.borderRadius = '50%';
+    botonWhatsapp.style.width = '50px';
+    botonWhatsapp.style.height = '50px';
+    botonWhatsapp.style.display = 'flex';
+    botonWhatsapp.style.justifyContent = 'center';
+    botonWhatsapp.style.alignItems = 'center';
+    botonWhatsapp.style.boxShadow = '0 2px 8px rgba(0,0,0,0.2)';
+    botonWhatsapp.style.zIndex = '1000';
+    botonWhatsapp.title = 'Escríbeme por WhatsApp';
+
+    document.body.appendChild(botonWhatsapp);
+
+    // ✅ Mensaje en consola
+    console.log("🚀 Bienvenido al sitio de Christopher Web. ¿Listo para tener tu página?");
+  </script>
+</body>
+</html>
